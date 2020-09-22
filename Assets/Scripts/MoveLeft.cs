@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
@@ -10,6 +11,24 @@ public class MoveLeft : MonoBehaviour
         transform.Translate(Vector3.left * Time.deltaTime * speed);
 
         if (transform.position.x < -15)
-            transform.position += new Vector3(30, 0, 0); //Vector3.right * 30;
+        {
+            transform.position += new Vector3(30, 0, 0);
+            ShowRandomSprite();
+
+        }
+    }
+
+    private void ShowRandomSprite()
+    {
+        int index = UnityEngine.Random.Range(0, 3);
+        int childCount = transform.childCount;
+
+        for(int i=0; i< childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            bool shouldShow = index == i;
+
+            child.gameObject.SetActive(shouldShow);
+        }
     }
 }

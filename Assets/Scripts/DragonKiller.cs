@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DragonKiller : MonoBehaviour
 {
-
+    public GameObject RedDragon;
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +14,7 @@ public class DragonKiller : MonoBehaviour
             SceneManager.LoadScene(0);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         SceneManager.LoadScene(0);
     }

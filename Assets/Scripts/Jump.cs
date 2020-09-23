@@ -11,6 +11,10 @@ public class Jump : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
+        {
             GetComponent<Rigidbody2D>().AddForce(JumpForce);
+            GetComponent<AudioSource>().Play();
+        }
+           
     }
 }

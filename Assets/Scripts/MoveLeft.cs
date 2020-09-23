@@ -4,6 +4,12 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     public float speed = 1;
+    private Enemy enemy;
+
+    private void Awake()
+    {
+        enemy = GetComponent<Enemy>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -14,7 +20,7 @@ public class MoveLeft : MonoBehaviour
         {
             transform.position += new Vector3(30, 0, 0);
             ShowRandomSprite();
-
+            enemy?.Respawn();
         }
     }
 

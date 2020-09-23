@@ -2,7 +2,7 @@
 
 public class MoveUpAndDown : MonoBehaviour
 {
-    private float HeightVariance = 1f;
+    public float HeightVariance = 1f;
 
     // Update is called once per frame
     void Update()

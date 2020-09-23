@@ -3,7 +3,7 @@
 public class Shooter : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    private Vector3 offsetProjectile = new Vector3(2, 0, 0);
+    private Vector3 offsetProjectile = new Vector3(1.5f, 0, 0);
 
     
     // Update is called once per frame
